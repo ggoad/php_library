@@ -3,6 +3,12 @@ if(!isset($UNIREP_computeFunctions)){
 	$UNIREP_computeFunctions=[];
 }
 
+define('UNIREP_levels',[
+['open'=>'`--','close'=>'--`'],
+['open'=>'`~~','close'=>'~~`'],
+['open'=>'#~~','close'=>'~~#']
+]);
+
 function UnirepCheckMatches($str, $pat){
 	foreach($pat as $k=>$v)
 	{
@@ -13,11 +19,7 @@ function UnirepCheckMatches($str, $pat){
 	return false;
 }
 
-define('UNIREP_levels',[
-['open'=>'`--','close'=>'--`'],
-['open'=>'`~~','close'=>'~~`'],
-['open'=>'#~~','close'=>'~~#']
-]);
+
 $UNIREP_liveOrLocal='live';
 $UNIREP_levelIndex=0;
 function UnirepTagLevelUp($str){

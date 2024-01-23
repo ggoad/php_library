@@ -1,8 +1,6 @@
 <?php 
 function postStream($url, $postVarObject){
   $postVarObject=obTOhttp1level($postVarObject);
- // die($postVarObject);
-  //echo(json_encode($postVarObject));
    $options=[
      'http'=>[
        'method'=>"POST",
@@ -12,12 +10,7 @@ function postStream($url, $postVarObject){
        'content'=>$postVarObject
      ]
    ];
-  // echo($options['http']['content']);
-  // echo(json_encode($options));
    $context=stream_context_create($options);
-   //echo(($context));
-    //$j= file_get_contents($url, false, $context);
-   // echo($j);
     return file_get_contents($url, false, $context);
 }
 function obTOhttp1level($ob){

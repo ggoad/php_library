@@ -2,6 +2,7 @@
 if(!isset($UNIREP_computeFunctions)){
 	$UNIREP_computeFunctions=[];
 }
+
 function UnirepCheckMatches($str, $pat){
 	foreach($pat as $k=>$v)
 	{
@@ -31,6 +32,13 @@ function UnirepTagLevelUp($str){
 	return $str;
 	
 }
+
+/// this is the usage: 
+
+// str is the template
+// the pats are assoiative arrays, each successive one overrides the previous 
+// the key is the token in the template we are searching for, the value is value to replace it with.
+
 function Unirep($str, ...$pat){
 	global $UNIREP_computeFunctions;
 	$globPat=[];
